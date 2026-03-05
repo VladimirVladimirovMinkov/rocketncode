@@ -1,0 +1,83 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 4,
+    "minor": 1,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "debug",
+      "displayName": "Debug",
+      "generator": "MinGW Makefiles",
+      "binaryDir": "${sourceDir}/cmake-build-debug",
+      "environment": {
+        "PATH": "C:/Users/vladi/AppData/Local/Programs/CLION2~1.3/bin/mingw/bin;$penv{PATH}"
+      },
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_MAKE_PROGRAM": "C:/Users/vladi/AppData/Local/Programs/CLION2~1.3/bin/mingw/bin/mingw32-make.exe",
+        "CMAKE_C_COMPILER": "C:/Users/vladi/AppData/Local/Programs/CLION2~1.3/bin/mingw/bin/gcc.exe",
+        "CMAKE_CXX_COMPILER": "C:/Users/vladi/AppData/Local/Programs/CLION2~1.3/bin/mingw/bin/g++.exe"
+      }
+    },
+    {
+      "name": "release",
+      "displayName": "Release",
+      "generator": "MinGW Makefiles",
+      "binaryDir": "${sourceDir}/cmake-build-release",
+      "environment": {
+        "PATH": "C:/Users/vladi/AppData/Local/Programs/CLION2~1.3/bin/mingw/bin;$penv{PATH}"
+      },
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_MAKE_PROGRAM": "C:/Users/vladi/AppData/Local/Programs/CLION2~1.3/bin/mingw/bin/mingw32-make.exe",
+        "CMAKE_C_COMPILER": "C:/Users/vladi/AppData/Local/Programs/CLION2~1.3/bin/mingw/bin/gcc.exe",
+        "CMAKE_CXX_COMPILER": "C:/Users/vladi/AppData/Local/Programs/CLION2~1.3/bin/mingw/bin/g++.exe"
+      }
+    },
+    {
+      "name": "release-linux",
+      "displayName": "Release (LINUX)",
+      "generator": "MinGW Makefiles",
+      "binaryDir": "${sourceDir}/cmake-build-release-linux",
+      "environment": {
+        "PATH": "C:/Users/vladi/AppData/Local/Programs/CLION2~1.3/bin/mingw/bin;$penv{PATH}"
+      },
+      "toolchainFile": "${sourceDir}/cmake/toolchains/linux-x86_64-gcc.cmake",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_MAKE_PROGRAM": "C:/Users/vladi/AppData/Local/Programs/CLION2~1.3/bin/mingw/bin/mingw32-make.exe"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "build-debug",
+      "displayName": "Build Debug",
+      "configurePreset": "debug",
+      "environment": {
+        "PATH": "C:/Users/vladi/AppData/Local/Programs/CLION2~1.3/bin/mingw/bin;$penv{PATH}"
+      },
+      "configuration": "Debug"
+    },
+    {
+      "name": "build-release",
+      "displayName": "Build Release",
+      "configurePreset": "release",
+      "environment": {
+        "PATH": "C:/Users/vladi/AppData/Local/Programs/CLION2~1.3/bin/mingw/bin;$penv{PATH}"
+      },
+      "configuration": "Release"
+    },
+    {
+      "name": "build-release-linux",
+      "displayName": "Build Release (LINUX)",
+      "configurePreset": "release-linux",
+      "environment": {
+        "PATH": "C:/Users/vladi/AppData/Local/Programs/CLION2~1.3/bin/mingw/bin;$penv{PATH}"
+      },
+      "configuration": "Release"
+    }
+  ]
+}

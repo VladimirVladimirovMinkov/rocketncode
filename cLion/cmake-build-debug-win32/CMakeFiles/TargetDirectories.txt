@@ -1,0 +1,4 @@
+C:/Users/vladi/OneDrive/Documents/GitHub/rocketncode/cLion/cmake-build-debug-win32/CMakeFiles/cLion_lib.dir
+C:/Users/vladi/OneDrive/Documents/GitHub/rocketncode/cLion/cmake-build-debug-win32/CMakeFiles/cLion.dir
+C:/Users/vladi/OneDrive/Documents/GitHub/rocketncode/cLion/cmake-build-debug-win32/CMakeFiles/edit_cache.dir
+C:/Users/vladi/OneDrive/Documents/GitHub/rocketncode/cLion/cmake-build-debug-win32/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,2 @@
+C:\Users\vladi\AppData\Local\Programs\CLION2~1.3\bin\mingw\bin\ar.exe qc libcLion_lib.a CMakeFiles/cLion_lib.dir/library.c.obj
+C:\Users\vladi\AppData\Local\Programs\CLION2~1.3\bin\mingw\bin\ranlib.exe libcLion_lib.a

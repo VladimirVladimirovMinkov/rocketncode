@@ -1,0 +1,4 @@
+Cannot generate into C:\Users\vladi\OneDrive\Documents\GitHub\rocketncode\cLion\cmake-build-release-linux
+It was created with incompatible generator 'MinGW Makefiles'
+
+Please either delete it manually or select another generation directory
