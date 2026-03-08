@@ -1,0 +1,56 @@
+Pressure Tank Blowdown Equations (Choked + Subsonic)
+
+gamma_air = 1.4
+critical_ratio = (2/(gamma + 1))^(gamma/(gamma - 1))
+critical_ratio_air = 0.528
+choked_if = (P_down/P_tank) <= critical_ratio
+choked_if_equiv = (P_tank/P_down) >= ((gamma + 1)/2)^(gamma/(gamma - 1))
+
+mdot_choked = C_d*A_throat*P_tank*sqrt(gamma/(R*T_tank))*(2/(gamma + 1))^((gamma + 1)/(2*(gamma - 1)))
+
+mdot_subsonic = C_d*A_throat*P_tank*sqrt((2*gamma/(R*T_tank*(gamma - 1)))*((P_down/P_tank)^(2/gamma) - (P_down/P_tank)^((gamma + 1)/gamma)))
+
+mass_balance = dm_tank/dt = -mdot
+ideal_gas_tank = P_tank = m_tank*R*T_tank/V_tank
+
+adiabatic_relation = P_tank*V_tank^gamma = const
+adiabatic_TP = T_tank/T0 = (P_tank/P0)^((gamma - 1)/gamma)
+adiabatic_Pm = P_tank/P0 = (m_tank/m0)^gamma
+
+isothermal_relation = T_tank = const
+isothermal_Pm = P_tank/P0 = m_tank/m0
+
+time_to_target_pressure = t = integral(from m0 to mf) [dm/(-mdot(m))]
+
+mass_step = m_{k+1} = m_k - mdot_k*dt
+pressure_step = P_{k+1} = m_{k+1}*R*T_{k+1}/V_tank
+temperature_step_adiabatic = T_{k+1} = T_k*(m_{k+1}/m_k)^(gamma - 1)
+
+
+Symbol Table
+
+gamma = ratio of specific heats (cp/cv)
+gamma_air = ratio of specific heats for air (1.4)
+critical_ratio = critical pressure ratio for choking
+critical_ratio_air = numeric critical ratio for air (~0.528)
+P_tank = upstream tank absolute pressure
+P_down = downstream absolute pressure (usually atmospheric)
+T_tank = tank absolute temperature
+T0 = initial tank temperature
+P0 = initial tank pressure
+m_tank = gas mass in tank
+m0 = initial gas mass in tank
+mf = final gas mass at target pressure
+V_tank = tank internal volume
+C_d = discharge coefficient of orifice/nozzle
+A_throat = effective throat/orifice flow area
+R = specific gas constant for the gas
+mdot = mass flow rate out of tank
+mdot_choked = choked-flow mass flow rate
+mdot_subsonic = subsonic-flow mass flow rate
+dt = simulation time step
+m_k = tank mass at step k
+m_{k+1} = tank mass at next step
+P_{k+1} = tank pressure at next step
+T_{k+1} = tank temperature at next step
+const = constant value during a given thermodynamic path

@@ -10,8 +10,14 @@ add_library(cLion_lib STATIC library.c)
 add_executable(cLion
         main.cpp
         gas.cpp
+        liquid.cpp
+        solid.cpp
         ambient.cpp
-        pipe.cpp)
+        pipe.cpp
+        tank.cpp
+        tank.h
+        liquid.h
+        solid.h)
 
 target_link_libraries(cLion PRIVATE cLion_lib)
 
