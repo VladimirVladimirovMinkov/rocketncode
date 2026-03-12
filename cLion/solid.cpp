@@ -24,6 +24,18 @@ double solve_solid(double P, double V, double n, double T) {
     return 0.0;
 }
 
+solid::solid() {
+    std::memset(s.name, 0, sizeof(s.name));
+    s.Ps = 0.0;
+    s.Vs = 0.0;
+    s.ns = 0.0;
+    s.Tk = 0.0;
+    s.mm = 0.0;
+    for (double &coef : s.cs) {
+        coef = 0.0;
+    }
+}
+
 solid::solid(const char *name,
              double mm, double ns, double Vs,
              double Tk, double Ps, const double cg[18]) {
@@ -37,10 +49,10 @@ solid::solid(const char *name,
 
     if (cg) {
         for (int i = 0; i < 18; ++i) {
-            s.cg[i] = cg[i];
+            s.cs[i] = cg[i];
         }
     } else {
-        for (double &i : s.cg) {
+        for (double &i : s.cs) {
             i = 0.0;
         }
     }
@@ -157,13 +169,13 @@ double solid::gamma() {
     const double T3 = T2 * s.Tk;
     const double T4 = T3 * s.Tk;
 
-    const double cp_over_R = (s.cg[offset + 0] * Tinv2) +
-                             (s.cg[offset + 1] * Tinv) +
-                              s.cg[offset + 2] +
-                             (s.cg[offset + 3] * s.Tk) +
-                             (s.cg[offset + 4] * T2) +
-                             (s.cg[offset + 5] * T3) +
-                             (s.cg[offset + 6] * T4);
+    const double cp_over_R = (s.cs[offset + 0] * Tinv2) +
+                             (s.cs[offset + 1] * Tinv) +
+                              s.cs[offset + 2] +
+                             (s.cs[offset + 3] * s.Tk) +
+                             (s.cs[offset + 4] * T2) +
+                             (s.cs[offset + 5] * T3) +
+                             (s.cs[offset + 6] * T4);
 
     return cp_over_R / (cp_over_R - 1.0);
 }

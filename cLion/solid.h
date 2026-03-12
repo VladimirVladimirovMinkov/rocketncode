@@ -14,7 +14,7 @@ struct solid_t {
     double ns;
     double Tk;
     double mm;
-    double cg[18];
+    double cs[18];
 };
 
 double solve_solid(double P, double V, double n, double T);
@@ -22,6 +22,8 @@ double solve_solid(double P, double V, double n, double T);
 class solid {
 public:
     solid_t s{};
+
+    solid();
 
     solid(const char *name,
           double mm, double ns, double Vs,

@@ -14,10 +14,16 @@ add_executable(cLion
         solid.cpp
         ambient.cpp
         pipe.cpp
+        valve.cpp
+        nozzle.cpp
         tank.cpp
         tank.h
+        valve.h
+        nozzle.h
         liquid.h
-        solid.h)
+        solid.h
+        matter.cpp
+        matter.h)
 
 target_link_libraries(cLion PRIVATE cLion_lib)
 
